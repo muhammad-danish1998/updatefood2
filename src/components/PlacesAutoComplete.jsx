@@ -13,6 +13,7 @@ function PlacesAutoComplete({ onPlaceSelect, zipCode, address, city }) {
 					const city = getCity(result[0]?.address_components);
 					console.log('result------->', result[0].formatted_address);
 					const zipCode = getZipCode(result[0], false);
+					if(!zipCode) return;
 					onPlaceSelect({
 						...data,
 						postcode: zipCode,
