@@ -4,7 +4,7 @@ import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import HeaderToggle from "./Header-Toggle";
 import { Link, useNavigate } from "react-router-dom";
-import PlacesAutoComplete2 from "./PlacesAutoComplete2";
+import PlacesAutoComplete from "./PlacesAutoComplete";
 import { useDispatch, useSelector } from "react-redux";
 import { updateSearchValue } from "../redux/store/actions/menuAction";
 // import { , useNavigate } from "react-router-dom";
@@ -15,6 +15,7 @@ function classNames(...classes) {
 
 export default function HeaderNavbar() {
   const { t, i18n } = useTranslation();
+  // const 
   const changeLanguage = (lng) => {
     localStorage.setItem("language", lng);
     i18n.changeLanguage(lng);
@@ -107,7 +108,7 @@ export default function HeaderNavbar() {
                         />
                       </svg>
                     </div>
-                    <PlacesAutoComplete2
+                    <PlacesAutoComplete
                       address={address}
                       zipCode={zipCode}
                       onPlaceSelect={handlePlaceSelect}
@@ -272,7 +273,7 @@ export default function HeaderNavbar() {
                     </svg>
                   </div>
                 
-                  <PlacesAutoComplete2
+                  <PlacesAutoComplete
                     address={address}
                     zipCode={zipCode}
                     onPlaceSelect={handlePlaceSelect}
